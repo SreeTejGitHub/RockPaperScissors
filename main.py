@@ -1,16 +1,51 @@
-# This is a sample Python script.
+import random
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+while True:
 
+    choices = ['rock', 'paper', 'scissors']
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+    computer = random.choice(choices)
 
+    player = None
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+    while player not in choices:
+        player = input('rock, paper, or scissors?:').lower()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    if player == computer:
+        print('computer: ', computer)
+        print('player: ', player)
+        print('Tie!')
+
+    elif player == 'rock':
+        if computer == 'paper':
+            print('computer: ', computer)
+            print('player: ', player)
+            print('you loose')
+        if computer == 'scissors':
+            print('computer: ', computer)
+            print('player: ', player)
+            print('you win')
+    elif player == 'scissors':
+        if computer == 'rock':
+            print('computer: ', computer)
+            print('player: ', player)
+            print('you loose')
+        if computer == 'paper':
+            print('computer: ', computer)
+            print('player: ', player)
+            print('you win')
+    elif player == 'paper':
+        if computer == 'scissors':
+            print('computer: ', computer)
+            print('player: ', player)
+            print('you loose')
+        if computer == 'rock':
+            print('computer: ', computer)
+            print('player: ', player)
+            print('you win')
+
+    play_again = input('play again (yes/no) ?: ').lower()
+
+    if play_again != 'yes':
+        break
+print('bye')
